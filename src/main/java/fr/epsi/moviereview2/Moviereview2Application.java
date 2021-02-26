@@ -28,9 +28,9 @@ public class Moviereview2Application {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
-			MovieRestTemplate mvrr = restTemplate.getForObject(
-					"https://api.themoviedb.org/3/movie/550?api_key=719886a0b8020a1ae30c9c5d174c01d3", MovieRestTemplate.class);
-			log.info(mvrr.toString());
+			MovieRestTemplate mvrt = restTemplate.getForObject(
+					"https://api.themoviedb.org/3/discover/movie?api_key=719886a0b8020a1ae30c9c5d174c01d3&language=fr-FR", MovieRestTemplate.class);
+			log.info(mvrt.toString());
 		};
 	}
 }

@@ -45,11 +45,10 @@ public class Results {
 	@Override
 	public String toString() {
 		
-		return "results{" +
-					"original_title=" + original_title +
-					", overview=" + overview +
-					", poster_path='" + poster_path + '\'' +
-					'}';
-			
+	return 		"{" +
+				"original_title=" + original_title +
+				", overview=" + overview +
+				", poster_path='" + poster_path + '\'' +
+				'}';		
 	}	
 }

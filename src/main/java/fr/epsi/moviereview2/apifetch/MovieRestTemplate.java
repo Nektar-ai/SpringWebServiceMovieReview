@@ -6,7 +6,25 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class MovieRestTemplate {
 
 	private String page;
-	  private Results results;
+	private Results[] results;
+	private String rez = "";
+
+		
+	
+	private String resultsJsonArrayToString()
+	{
+		
+		for (Results res : results)
+		{
+			rez += res.toString()+",";
+		}
+		if(rez.endsWith(","))
+		{
+		  rez = rez.substring(0,rez.length() - 1);
+		  rez += "]";
+		}
+		return rez;
+	}
 	
 	public String getPage() {
 		return page;
@@ -14,19 +32,22 @@ public class MovieRestTemplate {
 	public void setPage(String page) {
 		this.page = page;
 	}
-	public Results getResults() {
+	public Results[] getResults() {
 		return results;
 	}
-	public void setResults(Results results) {
+	public void setResults(Results[] results) {
 		this.results = results;
 	}
-
+	
 	@Override
 	public String toString() {
+
+	this.resultsJsonArrayToString()	;
 		
-		return "Quote{" +
-				"type='" + page + '\'' +
-				", value=" + results +
+		return "{" +
+				"page='" + page + '\'' +
+				", results=[" + 
+					rez +				
 				'}';
 	  }	
 }
