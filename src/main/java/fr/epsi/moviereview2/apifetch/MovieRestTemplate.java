@@ -1,8 +1,6 @@
-package fr.epsi.moviereview2.service;
+package fr.epsi.moviereview2.apifetch;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import fr.epsi.moviereview2.apifetch.Results;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieRestTemplate {
